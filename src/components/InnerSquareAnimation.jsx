@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import styles from '../styles/rectangleScroll.module.scss';
 

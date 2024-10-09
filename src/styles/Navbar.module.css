@@ -1,0 +1,112 @@
+.navbarDiv {
+    width: 80%;
+    max-width: 800px;
+    aspect-ratio: 4 / 0.75;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    pointer-events: auto;
+  }
+  
+  .selectionContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  
+  .scrollTypeButtons,
+  .aboutLinkHolder {
+    display: flex;
+    align-items: center;
+  }
+  
+  .scrollTypeButtons {
+    flex: 2; /* Changed from flex: 2 */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; /* Changed from flex-start */
+  }
+  
+  .aboutLinkHolder {
+    flex: 1;
+    justify-content: flex-start; /* Changed from center */
+  }
+  
+  .typeButtonDrawer {
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    align-items: center;
+    background-color: rgb(234, 234, 234);
+    border-radius: 15px;
+    /* margin: 10px; */ /* Ensure there's no margin here */
+    position: relative;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  .drawerSection {
+    flex: none;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    z-index: 1;
+    /* margin: 0; */ /* Ensure no extra margins */
+  }
+  
+  .drawerSection button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+    z-index: 2;
+    background: none;
+  }
+  
+  .drawerSection button:hover {
+    cursor: pointer;
+  }
+  
+  .drawerSectionSelected {
+    position: absolute;
+    top: 7%;
+    height: 85%;
+    border-radius: 15px;
+    border: 2px solid black;
+    background-color: rgba(215, 215, 215, 0.216);
+    z-index: 3;
+  }
+  
+  .aboutButtonLink {
+    width: 100%;
+    height: 80%;
+    margin: 10px; /* Reduced from 10px */
+    background-color: rgb(234, 234, 234);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    position: relative;
+  }
+  
+  .aboutButtonLink:hover {
+    cursor: pointer;
+  }
+  
+  .aboutButtonLink h4,
+  .aboutButtonLink p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .drawerSection,
+  .drawerSection button,
+  .aboutButtonLink,
+  .drawerSectionSelected {
+    box-sizing: border-box;
+  }
+  

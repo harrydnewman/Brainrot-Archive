@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useScroll } from '@react-spring/web';
 import styles from '../styles/rectangleScroll.module.scss';
 import InnerSquareAnimation from '../components/InnerSquareAnimation';

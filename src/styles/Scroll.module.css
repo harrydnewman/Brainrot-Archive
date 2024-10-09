@@ -1,0 +1,96 @@
+
+
+.flexScrollContainer {
+    width: 100%;
+    height: 100vh;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.leftFlex {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.rightFlex {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.leftScrollContainer {
+    height: 80%;
+
+
+}
+
+.sourceScrollContainer {
+    height: 5%;
+    pointer-events: none;
+}
+
+.rightScrollContainer {
+    height: 85%;
+    pointer-events: none;
+}
+
+
+
+.mobileScrollContainer {
+    width: 100%;
+    height: 100vh;
+} 
+
+.mobileLeftScrollContainer {
+    height: 55vh;
+}
+
+.mobileRightScrollContainer {
+    height: 41vh;
+}
+
+
+
+.mobileSourceScrollContainer {
+    height: 4vh;
+}
+
+@media screen and (max-width: 700px) {
+    .leftFlex {
+        width: 50%;
+    }
+    .rightFlex {
+        width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .leftFlex {
+        width: 55%;
+    }
+    .rightFlex {
+        width: 45%;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    .mobileLeftScrollContainer {
+        height: 40vh;
+    }
+    
+    .mobileRightScrollContainer {
+        height: 56vh;
+    }
+    
+    
+    
+    .mobileSourceScrollContainer {
+        height: 4vh;
+    }
+  }
