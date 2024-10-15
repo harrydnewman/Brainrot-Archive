@@ -3,25 +3,30 @@ import styles from "../styles/GridTestItem.module.css";
 
 export default function GridTestItem() {
     const [isHovered, setIsHovered] = useState(false);
-    const [moveLeft, setMoveLeft] = useState(false);
+    const [moveLeft, setMoveLeft] = useState(false);  // If true, expand to the left
     const gridItemRef = useRef(null);
 
     useEffect(() => {
         if (isHovered && gridItemRef.current) {
             // Get the bounding box of the hovered grid item
             const rect = gridItemRef.current.getBoundingClientRect();
-            // Check if the right edge of the item is going off-screen
-            const isOffScreen = rect.right + 500 > window.innerWidth; // 500 is the expanded width difference
-            console.log("Rect left:",rect.left)
-            console.log("Rect right:", rect.right)
-            console.log("Window inner width:",window.innerWidth)
             
+            // Calculate the distances from both edges
+            const distanceFromLeftEdge = rect.left;
+            const distanceFromRightEdge = window.innerWidth - rect.left;
 
-            // If the element is too close to the right edge, move it to the left
-            if (isOffScreen) {
-                setMoveLeft(true);
-            } else {
+            // Log the distances for debugging purposes
+            console.log("Distance from left edge to element left:", distanceFromLeftEdge);
+            console.log("Distance from right edge to element left:", distanceFromRightEdge);
+            console.log("Window inner width:", window.innerWidth);
+
+            // Decide whether to expand left or right based on the distances
+            if (distanceFromRightEdge > distanceFromLeftEdge) {
+                // Expand to the right (enough space on the right)
                 setMoveLeft(false);
+            } else {
+                // Expand to the left (not enough space on the right)
+                setMoveLeft(true);
             }
         }
     }, [isHovered]);
