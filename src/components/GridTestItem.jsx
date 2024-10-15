@@ -24,7 +24,7 @@ export default function GridTestItem() {
 
             // Adjust translateX to keep the component within the viewport
             if (desiredRight > window.innerWidth) {
-                translateX -= (desiredRight - window.innerWidth);
+                translateX -= (desiredRight - window.innerWidth) +30;
             }
             if (desiredLeft + translateX < 0) {
                 translateX += -(desiredLeft + translateX);

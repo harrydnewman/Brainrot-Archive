@@ -16,6 +16,7 @@
 /* Hovered style for gridInfoDiv */
 .gridInfoDiv.hovered {
     z-index: 10;  /* Bring it to the front */
+    padding-right: 30px;
 }
 
 /* Inner content */
