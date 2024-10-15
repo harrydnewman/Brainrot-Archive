@@ -1,23 +1,35 @@
+/* Default style for gridInfoDiv */
+.gridInfoDiv {
+    background-color: purple;
+    width: 250px; /* Default width */
+    height: 460px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    transition: width 0.5s ease, z-index 0.5s;
+    z-index: 1;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Hovered style for gridInfoDiv */
+.gridInfoDiv.hovered {
+    width: 750px; /* Expands to this width on hover */
+    z-index: 10;  /* Bring it to the front */
+}
+
+/* Inner content */
 .squareDiv {
     height: 444.44px;
-    width: 250px;
+    width: 100%;
     background-color: white;
     border-radius: 10px;
     border: 3px solid black;
-    transition: 0.5s;
-    margin-left: 0px;
-    position: relative; /* Keep it relative to allow child stacking */
-    z-index: 10; /* Make sure it's on top */
+    transition: background-color 0.3s ease;
 }
 
-.gridInfoDiv {
-    background-color: purple;
-    width: 700px;
-    border-radius: 10px;
-    height: 460px;
-    display: flex;
-    z-index: 1; /* Ensure this has a lower z-index than the child */
-    align-items: center;
-    position: relative;
-    overflow: visible; /* Ensure content can overflow if necessary */
+/* Change background color on hover */
+.gridInfoDiv.hovered .squareDiv {
+    background-color: green;
 }

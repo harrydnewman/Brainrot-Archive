@@ -4,7 +4,7 @@ import GridTestItem from "../components/GridTestItem"
 export default function GridTester(){
     return (
 
-        <div className={styles.gridTesterDiv}>
+        <div className={styles.gridContainer}>
  <GridTestItem/>
  <GridTestItem/>
  <GridTestItem/>
