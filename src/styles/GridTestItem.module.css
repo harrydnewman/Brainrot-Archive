@@ -1,22 +1,24 @@
 /* Default style for gridInfoDiv */
 .gridInfoDiv {
-    background-color: purple;
+    background-color: white;
+    border: 0px solid black;
     width: 250px; /* Default width */
     height: 460px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: left;
-    transition: width 0.5s ease, z-index 0.5s, transform 0.5s ease; /* Ensure smooth transform and width transitions */
+    transition: width 0.5s ease, z-index 0.5s, transform 0.5s ease, border 0.3s ease; /* Ensure smooth transform and width transitions */
     z-index: 1;
     box-sizing: border-box;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* Hovered style for gridInfoDiv */
 .gridInfoDiv.hovered {
     z-index: 10;  /* Bring it to the front */
     padding-right: 30px;
+    border: 3px solid black;
 }
 
 /* Inner content */
@@ -27,11 +29,13 @@
     border-radius: 10px;
     border: 3px solid black;
     margin-left: 0px;
-    transition: background-color 0.3s ease, margin-left 0.3s ease;
+    transition: background-color 0.3s ease, margin-left 0.3s ease, transform 0.5s ease;
+    /* transform-origin: left center; */
 }
 
 /* Change background color on hover */
 .gridInfoDiv.hovered .squareDiv {
     background-color: green;
     margin-left: 10px;
+    transform: scale(1.005);
 }
