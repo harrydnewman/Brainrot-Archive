@@ -12,6 +12,10 @@ export default function GridTestItem() {
             const rect = gridItemRef.current.getBoundingClientRect();
             // Check if the right edge of the item is going off-screen
             const isOffScreen = rect.right + 500 > window.innerWidth; // 500 is the expanded width difference
+            console.log("Rect left:",rect.left)
+            console.log("Rect right:", rect.right)
+            console.log("Window inner width:",window.innerWidth)
+            
 
             // If the element is too close to the right edge, move it to the left
             if (isOffScreen) {
