@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    transition: width 0.5s ease, z-index 0.5s, transform 0.5s ease; /* Ensure transform transition */
+    transition: width 0.5s ease, z-index 0.5s, transform 0.5s ease; /* Ensure smooth transform and width transitions */
     z-index: 1;
     box-sizing: border-box;
     overflow: hidden;
@@ -16,16 +16,6 @@
 /* Hovered style for gridInfoDiv */
 .gridInfoDiv.hovered {
     z-index: 10;  /* Bring it to the front */
-}
-
-/* Move the div to the left if it's near the screen's edge */
-.gridInfoDiv.moveLeft {
-    transform: translateX(-500px); /* Move it left by the expanded amount */
-}
-
-/* Reset the position when hover ends (transform to 0) */
-.gridInfoDiv:not(.hovered) {
-    transform: translateX(0); /* Reset to original position */
 }
 
 /* Inner content */

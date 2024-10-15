@@ -5,51 +5,58 @@ export default function GridTestItem() {
     const [isHovered, setIsHovered] = useState(false);
     const [moveLeft, setMoveLeft] = useState(false);  // If true, expand to the left
     const [adjustedWidth, setAdjustedWidth] = useState(750);  // Adjust width if it exceeds screen width
+    const [translateXValue, setTranslateXValue] = useState(0); // Handle translation dynamically
     const gridItemRef = useRef(null);
 
     useEffect(() => {
         if (isHovered && gridItemRef.current) {
-            // Get the bounding box of the hovered grid item
             const rect = gridItemRef.current.getBoundingClientRect();
             
-            // Calculate the distances from both edges
+            // Get the available space to the right and left
             const distanceFromLeftEdge = rect.left;
-            const distanceFromRightEdge = window.innerWidth - rect.left;
-            
-            // Calculate maximum available width (screen width - 60px)
+            const distanceFromRightEdge = window.innerWidth - rect.right;
+
+            // Calculate the maximum available width (viewport width - 60px padding)
             const maxAvailableWidth = window.innerWidth - 60;
 
-            // If the item width (750px) is greater than the available width, adjust the width
-            if (750 > maxAvailableWidth) {
-                setAdjustedWidth(maxAvailableWidth);
-            } else {
-                setAdjustedWidth(750);
-            }
+            // Determine the actual expansion width (min between 750px and the max available space)
+            const newWidth = Math.min(750, maxAvailableWidth);
 
-            // Log the distances for debugging purposes
-            console.log("Distance from left edge to element left:", distanceFromLeftEdge);
-            console.log("Distance from right edge to element left:", distanceFromRightEdge);
-            console.log("Window inner width:", window.innerWidth);
-            console.log("Adjusted width:", adjustedWidth);
+            // Set the adjusted width based on the available space
+            setAdjustedWidth(newWidth);
 
-            // Decide whether to expand left or right based on the distances
-            if (distanceFromRightEdge > distanceFromLeftEdge) {
-                // Expand to the right (enough space on the right)
+            // Decide if we should expand to the left or right
+            if (distanceFromRightEdge >= newWidth) {
+                // Enough space on the right, expand to the right
                 setMoveLeft(false);
-            } else {
-                // Expand to the left (not enough space on the right)
+                setTranslateXValue(0);
+            } else if (distanceFromLeftEdge >= newWidth) {
+                // Not enough space on the right, but enough on the left, expand to the left
                 setMoveLeft(true);
+                setTranslateXValue(-(newWidth - 250));
+            } else {
+                // Not enough space on either side, cap width to the available space and expand left if necessary
+                setMoveLeft(distanceFromRightEdge < distanceFromLeftEdge);
+                const shiftValue = distanceFromRightEdge < distanceFromLeftEdge ? -(newWidth - 250) : 0;
+                setTranslateXValue(shiftValue);
             }
+        } else {
+            // Reset the translateX when hover is removed
+            setTranslateXValue(0);
+            setAdjustedWidth(250); // Reset width to default
         }
-    }, [isHovered, adjustedWidth]);
+    }, [isHovered]);
 
     return (
         <div
             ref={gridItemRef}
-            className={`${styles.gridInfoDiv} ${isHovered ? styles.hovered : ''} ${moveLeft ? styles.moveLeft : ''}`}
+            className={`${styles.gridInfoDiv} ${isHovered ? styles.hovered : ''}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}  // Reset hover state on mouse leave
-            style={{ width: isHovered ? `${adjustedWidth}px` : '250px' }}  // Dynamically set width based on available space
+            style={{
+                width: isHovered ? `${adjustedWidth}px` : '250px',
+                transform: `translateX(${translateXValue}px)`,  // Reset translateX dynamically
+            }}  // Dynamically set width and position
         >
             <div className={styles.squareDiv}></div>
         </div>
