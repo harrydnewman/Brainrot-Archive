@@ -8,6 +8,9 @@ export default function GridTester(){
  <GridTestItem/>
  <GridTestItem/>
  <GridTestItem/>
+ <GridTestItem/>
+ <GridTestItem/>
+ <GridTestItem/>
         </div>       
     )
 }
