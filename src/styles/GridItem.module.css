@@ -1,11 +1,5 @@
-.mainDiv{
-    width: 100%;
-    height: 100%;
-    background-color: green;
-}
-
 .videoDiv {
-    height: 200px;
-    width: 200px;
+    height: 444.44px;
+    width: 250px;
     background-color: purple;
 }

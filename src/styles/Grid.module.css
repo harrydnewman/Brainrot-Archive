@@ -1,12 +1,21 @@
 .mainDiv {
     z-index: 0;
-    padding-top: 100px;
-    height: 100vh;
+    padding-top: 90px;
+    
+    height: 100%;
     width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
     background-color: blue;
 }
 
-.mainDiv p {
-    padding: 0;
-    margin: 0;
+.mainDiv  {
+    /* width: 100%; */
+    /* padding: 0;
+    margin: 0; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
 }
