@@ -1,0 +1,23 @@
+.squareDiv {
+    height: 444.44px;
+    width: 250px;
+    background-color: white;
+    border-radius: 10px;
+    border: 3px solid black;
+    transition: 0.5s;
+    margin-left: 0px;
+    position: relative; /* Keep it relative to allow child stacking */
+    z-index: 10; /* Make sure it's on top */
+}
+
+.gridInfoDiv {
+    background-color: purple;
+    width: 700px;
+    border-radius: 10px;
+    height: 460px;
+    display: flex;
+    z-index: 1; /* Ensure this has a lower z-index than the child */
+    align-items: center;
+    position: relative;
+    overflow: visible; /* Ensure content can overflow if necessary */
+}
