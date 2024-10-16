@@ -32,10 +32,20 @@
     transition: background-color 0.3s ease, margin-left 0.3s ease, transform 0.5s ease;
     /* transform-origin: left center; */
 }
-
+.gridItemText {
+    width: 0px;
+    background-color: purple;
+}
 /* Change background color on hover */
 .gridInfoDiv.hovered .squareDiv {
     background-color: green;
     margin-left: 10px;
     transform: scale(1.005);
 }
+
+.gridInfoDiv.hovered .gridItemText {
+    margin-left: 10px;
+    width: calc(100% - 220px);
+}
+
+
