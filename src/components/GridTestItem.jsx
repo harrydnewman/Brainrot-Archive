@@ -51,7 +51,7 @@ export default function GridTestItem() {
         >
             <div className={styles.squareDiv}></div>
             <div className={styles.gridItemText}>
-                <p> </p>
+                <p> Hello </p>
             </div>
         </div>
     );

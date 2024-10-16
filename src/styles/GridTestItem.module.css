@@ -35,6 +35,8 @@
 .gridItemText {
     width: 0px;
     background-color: purple;
+    opacity: 0%;
+    transition: opacity 0.2s ease;
 }
 /* Change background color on hover */
 .gridInfoDiv.hovered .squareDiv {
@@ -45,7 +47,8 @@
 
 .gridInfoDiv.hovered .gridItemText {
     margin-left: 10px;
-    width: calc(100% - 220px);
+    width: calc(100% - 250px);
+    opacity: 100%;
 }
 
 
