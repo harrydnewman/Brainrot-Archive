@@ -14,7 +14,6 @@ export default function GridTestItem({ videoDataObject }) {
     const [descriptionSourceLink, setDescriptionSourceLink] = useState("")
     const [videoSource, setVideoSource] = useState("")
     const [videoSourceLink, setVideoSourceLink] = useState("")
-    const [videoSrc, setVideoSrc] = useState("")
     const [username, setUsername] = useState("");
     
     const [title, setTitle] = useState("");
@@ -24,6 +23,8 @@ export default function GridTestItem({ videoDataObject }) {
     const gridItemRef = useRef(null);
 
     // const videoSrc = "http://46.101.219.105:6001/uploads/e003b0661da89917c44d67cc1713d568"
+    
+    // console.log(videoSrc)
 
     // set up these damn objects
     useEffect(() => {
@@ -67,11 +68,7 @@ export default function GridTestItem({ videoDataObject }) {
                 }
             }
         }
-
-        if(videoDataObject.videoSrc){
-            setVideoSrc(videoDataObject.videoSrc)
-        }
-    }, []);
+    }, [videoDataObject]);
 
     useEffect(() => {
         if (isHovered && gridItemRef.current) {
@@ -118,7 +115,7 @@ export default function GridTestItem({ videoDataObject }) {
             }}
         >
             <div className={styles.squareDiv}>
-                <VideoPlayerElement videoSrc={videoSrc} />
+                <VideoPlayerElement videoSrc={videoDataObject.videoSrc} />
             </div>
             <div className={styles.gridItemText}>
                 <h2>{title}</h2>
