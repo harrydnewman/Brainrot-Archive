@@ -65,9 +65,9 @@ const Scroll = ({scrollYProgress, videoData, onVideoEnd}) => {
                         <VideoPlayer scrollYProgress={scrollYProgress} videoData={videoData} onVideoEnd={onVideoEnd}/>
                         {/* <SquareForTesting scrollYProgress={scrollYProgress}/> */}
                     </div>
-                    <div className={styles.sourceScrollContainer}>
+                    {/* <div className={styles.sourceScrollContainer}>
                         <ScrollSource videoData={videoData} screenHeight={screenHeight} screenWidth={screenWidth} />
-                    </div>
+                    </div> */}
                 </div>
                 <div className={styles.rightFlex}>
                     <div className={styles.rightScrollContainer}>

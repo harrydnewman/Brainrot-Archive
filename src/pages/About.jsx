@@ -1,8 +1,8 @@
 import React from 'react'
-
+import styles from '../styles/About.module.css'
 const About = () => {
   return (
-    <div>
+    <div className={styles.mainDiv}>
         <h1>About</h1>
         {/* <video width="320" height="240" controls>
                     <source src="http://46.101.219.105:6001/uploads/8fa89c81638c5d55ca404d8f384dd604" type="video/mp4"/>
