@@ -10,7 +10,7 @@ const Scroll = ({scrollYProgress, videoData, onVideoEnd}) => {
     const [screenHeight, setScreenHeight] = useState(0);
     const [screenWidth, setScreenWidth] = useState(0);
 
-   
+    
     const [windowSize, setWindowSize] = useState({
         width: window.innerWidth,
         height: window.innerHeight,

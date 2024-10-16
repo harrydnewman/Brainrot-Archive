@@ -15,7 +15,7 @@ export default function Home() {
   const [shouldRedirect, setShouldRedirect] = React.useState(false); // State to trigger redirect
   const containerRef = React.useRef(null);
   const navigate = useNavigate(); // Get the navigate function from react-router
-  const targetPage = '/controller';
+  const targetPage = '/scroll';
 
   const { scrollYProgress } = useScroll({
     container: containerRef,

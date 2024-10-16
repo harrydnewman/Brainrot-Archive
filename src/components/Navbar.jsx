@@ -1,9 +1,11 @@
 import { useSpring, animated } from 'react-spring';
 import React, { useState, useRef, useLayoutEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for routing
 import styles from '../styles/Navbar.module.css';
 
 const Navbar = ({ onSelectionChange }) => {
   const [selectedButton, setSelectedButton] = useState('scroll');
+  const navigate = useNavigate(); // Initialize useNavigate for routing
 
   const scrollButtonRef = useRef(null);
   const gridButtonRef = useRef(null);
@@ -57,26 +59,14 @@ const Navbar = ({ onSelectionChange }) => {
     config: { tension: 200, friction: 20 },
   });
 
-  function selectScroll() {
-    setSelectedButton('scroll');
+  // Navigate to routes based on selection and trigger selection change
+  const handleNavigation = (selection, path) => {
+    setSelectedButton(selection);
     if (onSelectionChange) {
-      onSelectionChange('scroll');
+      onSelectionChange(selection);
     }
-  }
-
-  function selectGrid() {
-    setSelectedButton('grid');
-    if (onSelectionChange) {
-      onSelectionChange('grid');
-    }
-  }
-
-  function selectConfused() {
-    setSelectedButton('confused');
-    if (onSelectionChange) {
-      onSelectionChange('confused');
-    }
-  }
+    navigate(path); // Navigate to the desired path
+  };
 
   return (
     <div className={styles.navbarDiv}>
@@ -94,7 +84,10 @@ const Navbar = ({ onSelectionChange }) => {
               className={`${styles.drawerSection} ${styles.rightBorder}`}
               ref={scrollButtonRef}
             >
-              <button className={styles.drawerButton} onClick={selectScroll}>
+              <button
+                className={styles.drawerButton}
+                onClick={() => handleNavigation('scroll', '/scroll')}
+              >
                 Scroll
               </button>
             </div>
@@ -102,7 +95,10 @@ const Navbar = ({ onSelectionChange }) => {
               className={`${styles.drawerSection} ${styles.leftBorder}`}
               ref={gridButtonRef}
             >
-              <button className={styles.drawerButton} onClick={selectGrid}>
+              <button
+                className={styles.drawerButton}
+                onClick={() => handleNavigation('grid', '/grid')}
+              >
                 Grid
               </button>
             </div>
@@ -111,7 +107,7 @@ const Navbar = ({ onSelectionChange }) => {
         <div className={styles.aboutLinkHolder}>
           <div
             className={styles.aboutButtonLink}
-            onClick={selectConfused}
+            onClick={() => handleNavigation('confused', '/about')}
             ref={confusedButtonRef}
           >
             <h4>Confused?</h4>
