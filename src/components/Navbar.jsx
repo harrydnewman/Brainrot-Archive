@@ -1,11 +1,12 @@
 import { useSpring, animated } from 'react-spring';
-import React, { useState, useRef, useLayoutEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for routing
+import React, { useState, useRef, useLayoutEffect, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom'; // Import useNavigate and useLocation
 import styles from '../styles/Navbar.module.css';
 
 const Navbar = ({ onSelectionChange }) => {
   const [selectedButton, setSelectedButton] = useState('scroll');
   const navigate = useNavigate(); // Initialize useNavigate for routing
+  const location = useLocation(); // Get the current location
 
   const scrollButtonRef = useRef(null);
   const gridButtonRef = useRef(null);
@@ -17,6 +18,18 @@ const Navbar = ({ onSelectionChange }) => {
     grid: { left: 0, width: 0 },
     confused: { left: 0, width: 0 },
   });
+
+  // Update selectedButton based on the current path
+  useEffect(() => {
+    const path = location.pathname;
+    if (path === '/grid') {
+      setSelectedButton('grid');
+    } else if (path === '/about') {
+      setSelectedButton('confused');
+    } else {
+      setSelectedButton('scroll');
+    }
+  }, [location.pathname]);
 
   useLayoutEffect(() => {
     function updatePositions() {
