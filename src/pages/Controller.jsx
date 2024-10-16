@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import styles from '../styles/Controller.module.css'
 import ScrollHolder from './ScrollHolder';
-import Grid from './Grid';
+import Grid from './GridTester';
 import About from './About';
 
 export default function Controller() {
