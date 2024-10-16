@@ -3,13 +3,75 @@ import styles from "../styles/GridTestItem.module.css";
 import VideoPlayerElement from "./VideoPlayerElement";
 
 // http://46.101.219.105:6001/uploads/e003b0661da89917c44d67cc1713d568
-export default function GridTestItem() {
+export default function GridTestItem({ videoDataObject }) {
     const [isHovered, setIsHovered] = useState(false);
     const [adjustedWidth, setAdjustedWidth] = useState(750); // Adjust width if it exceeds screen width
     const [translateXValue, setTranslateXValue] = useState(0); // Handle translation dynamically
+
+    
+    const [description, setDescription] = useState("")
+    const [descriptionSource, setDescriptionSource] = useState("")
+    const [descriptionSourceLink, setDescriptionSourceLink] = useState("")
+    const [videoSource, setVideoSource] = useState("")
+    const [videoSourceLink, setVideoSourceLink] = useState("")
+    const [videoSrc, setVideoSrc] = useState("")
+    const [username, setUsername] = useState("");
+    
+    const [title, setTitle] = useState("");
+    const [descriptionObject, setDescriptionObject] = useState(null)
+    const [sourceObject, setSourceObject] = useState(null);
+
     const gridItemRef = useRef(null);
 
-    const videoSrc = "http://46.101.219.105:6001/uploads/e003b0661da89917c44d67cc1713d568"
+    // const videoSrc = "http://46.101.219.105:6001/uploads/e003b0661da89917c44d67cc1713d568"
+
+    // set up these damn objects
+    useEffect(() => {
+        console.log("Hey Mamas!")
+        // console.log(videoDataObject.title)
+        if(videoDataObject.title){
+            setTitle(videoDataObject.title)
+        }
+        if(videoDataObject.description) {
+            setDescription(videoDataObject.description)
+
+            if(videoDataObject.descriptionSource){
+                setDescriptionSource(videoDataObject.descriptionSource)
+
+
+                if(videoDataObject.descriptionSourceLink){
+                    setDescriptionSourceLink(videoDataObject.descriptionSourceLink)
+
+                    setDescriptionObject(<p>{description} (<a href={descriptionSourceLink}>{descriptionSource}</a>)</p>)
+                   
+                }
+                else {
+                    setDescriptionObject(<p>{description} ({descriptionSource})</p>)
+                }
+            }
+            else {
+                setDescriptionObject(<p>{description}</p>)
+            }
+        }
+
+        if(videoDataObject.videoSource){
+            setVideoSource(videoDataObject.videoSource);
+            if(videoDataObject.tiktokUsername){
+                setUsername(videoDataObject.tiktokUsername)
+                if(videoDataObject.videoLink){
+                    setVideoSourceLink(videoDataObject.videoLink);
+                    setSourceObject(<p>Posted by <a href={videoSourceLink}>{username}</a> on {videoSource}</p>)
+                }
+                else {
+                    setSourceObject(<p>Posted by {username} on {videoSource}</p>)
+                }
+            }
+        }
+
+        if(videoDataObject.videoSrc){
+            setVideoSrc(videoDataObject.videoSrc)
+        }
+    }, []);
 
     useEffect(() => {
         if (isHovered && gridItemRef.current) {
@@ -42,6 +104,8 @@ export default function GridTestItem() {
         }
     }, [isHovered]);
 
+    
+
     return (
         <div
             ref={gridItemRef}
@@ -57,8 +121,10 @@ export default function GridTestItem() {
                 <VideoPlayerElement videoSrc={videoSrc} />
             </div>
             <div className={styles.gridItemText}>
-                <h2>Video Title</h2>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                <h2>{title}</h2>
+                {descriptionObject}
+
+                {sourceObject}
             </div>
         </div>
     );

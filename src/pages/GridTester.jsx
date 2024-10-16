@@ -29,7 +29,7 @@ export default function GridTester() {
 
     const gridItems = [];
     for (let i = 0; i < dataLength; i++) {
-        gridItems.push(<GridTestItem key={i} />); // Use a unique key for each item
+        gridItems.push(<GridTestItem key={i} videoDataObject={videoData[i]}/>); // Use a unique key for each item
     }
 
     return (

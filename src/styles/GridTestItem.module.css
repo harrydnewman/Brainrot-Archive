@@ -25,7 +25,7 @@
 .squareDiv {
     height: 444.44px;
     width: 250px;
-    background-color: white;
+    background-color: black;
     border-radius: 10px;
     border: 3px solid black;
     margin-left: 0px;
@@ -34,7 +34,6 @@
 }
 /* Change background color on hover */
 .gridInfoDiv.hovered .squareDiv {
-    background-color: green;
     margin-left: 10px;
     transform: scale(1.005);
 }
@@ -53,7 +52,7 @@
     /* opacity: 10%; */
     
     /* Introduce a 0.2s delay before changing the white-space */
-    white-space: nowrap; /* Default */
+    white-space: nowrap;
     animation: changeWhiteSpace 0.1s 0.1s forwards, changeOpacity 0.0001s 0.45s forwards;/* Triggers after 0.2s */
 }
 
