@@ -1,11 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "../styles/GridTestItem.module.css";
+import VideoPlayerElement from "./VideoPlayerElement";
 
+// http://46.101.219.105:6001/uploads/e003b0661da89917c44d67cc1713d568
 export default function GridTestItem() {
     const [isHovered, setIsHovered] = useState(false);
     const [adjustedWidth, setAdjustedWidth] = useState(750); // Adjust width if it exceeds screen width
     const [translateXValue, setTranslateXValue] = useState(0); // Handle translation dynamically
     const gridItemRef = useRef(null);
+
+    const videoSrc = "http://46.101.219.105:6001/uploads/e003b0661da89917c44d67cc1713d568"
 
     useEffect(() => {
         if (isHovered && gridItemRef.current) {
@@ -49,7 +53,9 @@ export default function GridTestItem() {
                 transform: `translateX(${translateXValue}px)`,
             }}
         >
-            <div className={styles.squareDiv}></div>
+            <div className={styles.squareDiv}>
+                <VideoPlayerElement videoSrc={videoSrc} />
+            </div>
             <div className={styles.gridItemText}>
                 <h2>Video Title</h2>
                 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>

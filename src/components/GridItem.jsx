@@ -4,7 +4,6 @@ export default function GridItem() {
     return (
         <div>
             <div className={styles.videoDiv}>
-                
             </div>
         </div>
     )

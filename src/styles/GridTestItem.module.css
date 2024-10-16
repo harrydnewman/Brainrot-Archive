@@ -54,7 +54,7 @@
     
     /* Introduce a 0.2s delay before changing the white-space */
     white-space: nowrap; /* Default */
-    animation: changeWhiteSpace 0.1s 0.2s forwards, changeOpacity 0.1s 0.5s forwards;/* Triggers after 0.2s */
+    animation: changeWhiteSpace 0.1s 0.1s forwards, changeOpacity 0.0001s 0.45s forwards;/* Triggers after 0.2s */
 }
 
 /* Keyframes to change white-space after 0.2s delay */
