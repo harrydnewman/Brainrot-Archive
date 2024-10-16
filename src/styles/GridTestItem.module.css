@@ -32,12 +32,6 @@
     transition: background-color 0.3s ease, margin-left 0.3s ease, transform 0.5s ease;
     /* transform-origin: left center; */
 }
-.gridItemText {
-    width: 0px;
-    background-color: purple;
-    opacity: 0%;
-    transition: opacity 0.2s ease;
-}
 /* Change background color on hover */
 .gridInfoDiv.hovered .squareDiv {
     background-color: green;
@@ -45,10 +39,36 @@
     transform: scale(1.005);
 }
 
+.gridItemText {
+    width: 0;
+    opacity: 0%;
+    overflow: hidden;
+    transition: opacity 0.8s ease, width 0.2s ease;
+    white-space: nowrap;
+}
+
 .gridInfoDiv.hovered .gridItemText {
     margin-left: 10px;
     width: calc(100% - 250px);
-    opacity: 100%;
+    /* opacity: 10%; */
+    
+    /* Introduce a 0.2s delay before changing the white-space */
+    white-space: nowrap; /* Default */
+    animation: changeWhiteSpace 0.1s 0.2s forwards, changeOpacity 0.1s 0.5s forwards;/* Triggers after 0.2s */
 }
 
+/* Keyframes to change white-space after 0.2s delay */
+@keyframes changeWhiteSpace {
+    to {
+        white-space: normal; /* Change to allow wrapping */
+        
+    }
+}
+
+@keyframes changeOpacity {
+    to {
+        opacity: 100%;
+    }
+
+}
 
