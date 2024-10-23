@@ -1,98 +1,101 @@
-
-
 .flexScrollContainer {
-    width: 100%;
-    height: 100vh;
-    /* background-color: blue; */
-    display: flex;
-    flex-direction: row;
-    padding: 5px;
+  width: 100%;
+  height: 100vh;
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
 }
 
 .leftFlex {
-    width: 40%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .rightFlex {
-    width: 60%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .leftScrollContainer {
-    height: 80%;
-
-
+  height: 80%;
 }
 
 .sourceScrollContainer {
-    height: 5%;
-    pointer-events: none;
+  height: 5%;
+  pointer-events: none;
 }
 
 .rightScrollContainer {
-    height: 85%;
-    pointer-events: none;
-    padding-right: 20%;
+  height: 85%;
+  pointer-events: none;
+  padding-right: 20%;
 }
 
-
-
 .mobileScrollContainer {
-    width: 100%;
-    height: 100vh;
-} 
+  width: 100%;
+  height: 100vh;
+}
 
 .mobileLeftScrollContainer {
-    height: 55vh;
+  height: 55vh;
 }
 
 .mobileRightScrollContainer {
-    height: 41vh;
+  height: 41vh;
 }
 
-
-
 .mobileSourceScrollContainer {
-    height: 4vh;
+  height: 4vh;
 }
 
 @media screen and (max-width: 700px) {
-    .leftFlex {
-        width: 50%;
-    }
-    .rightFlex {
-        width: 50%;
-    }
+  .leftFlex {
+    width: 50%;
+  }
+  .rightFlex {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .leftFlex {
+    width: 55%;
+  }
+  .rightFlex {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .mobileLeftScrollContainer {
+    height: 40vh;
   }
 
-  @media screen and (max-width: 600px) {
-    .leftFlex {
-        width: 55%;
-    }
-    .rightFlex {
-        width: 45%;
-    }
+  .mobileRightScrollContainer {
+    height: 56vh;
   }
 
-  @media screen and (max-width: 350px) {
-    .mobileLeftScrollContainer {
-        height: 40vh;
-    }
-    
-    .mobileRightScrollContainer {
-        height: 56vh;
-    }
-    
-    
-    
-    .mobileSourceScrollContainer {
-        height: 4vh;
-    }
+  .mobileSourceScrollContainer {
+    height: 4vh;
   }
+}
+
+::-webkit-scrollbar {
+    display: none; /* Hides scrollbars in WebKit browsers (Chrome, Safari) */
+  }
+  body::-webkit-scrollbar {
+    display: none; /* WebKit-based browsers (Chrome, Safari, Edge) */
+    width: 0; 
+  }
+  
+  body {
+    -ms-overflow-style: none; /* Hides scrollbars in Internet Explorer and Edge */
+    scrollbar-width: none; /* Hides scrollbars in Firefox */
+  }
+  
