@@ -21,6 +21,10 @@ const About = () => {
         <h1>Content Disclaimer</h1>
         <p>While the content preserved in The Brainrot Archive captures a unique facet of internet culture, it may be viewed as offensive or inappropriate by some. The Archive's goal is not to promote or endorse all the material it houses, but rather to preserve it as a significant part of online history and educate people about the evolution of digital media and culture. The content archived does not always align with the personal values or beliefs of the creators of the Archive, but it remains crucial to document the wide range of expressions and influences that have shaped the online world. By doing so, the Archive ensures that these cultural artifacts are available for analysis and reflection, contributing to a better understanding of internet culture.</p>
       </div>
+      <div className={styles.workInProgress}>
+        <h1>Archive Completeness</h1>
+        <p><strong>The Brainrot Archive</strong> is a work in progress. While it houses a wide array of content, it is not complete. The eventual goal is to implement a feature that allows users to upload and contribute to the archive themselves, ensuring that even more of internet culture's hidden corners are preserved and remembered for future generations.</p>
+      </div>
     </div>
   )
 }
