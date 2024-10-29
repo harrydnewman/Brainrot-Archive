@@ -20,3 +20,4 @@ The Brainrot Archive is a React application dedicated to preserving viral videos
 - Improve video metadata and categorization.
 - Optimize the archive for better content discovery.
 - Actually put the site online.
+- Clean out unused files (lol)
