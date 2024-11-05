@@ -6,9 +6,9 @@ const InnerSquareAnimation = React.forwardRef((props, ref) => {
   let { scrollYProgress, color, image } = props;
 
 
-const imageUrl = "http://46.101.219.105:6001"+image;
+  const imageUrl = "https://harrydnewman.com" + image;
 
-  
+
 
 
   // Animate height based on scroll progress
