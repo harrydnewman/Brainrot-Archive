@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    margin-top: 15%;
+    
 }
 .outerSquare {
     position: relative;
@@ -40,14 +40,15 @@
     width: 100%;
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 625px) {
     .playerDiv {
         justify-content: center;
         align-items: center;
+        margin-top: 15%;
     }
   }
 
-  @media screen and (max-width: 350px) {
+  @media screen and (max-width: 400px) {
     .playerDiv {
       justify-content: flex-end;
     }

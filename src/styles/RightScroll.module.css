@@ -15,7 +15,7 @@
 pointer-events: auto;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 625px) {
     h1 {
         padding: 0;
         margin: 0;
@@ -29,5 +29,19 @@ pointer-events: auto;
     .rightScrollContainer {
       justify-content: flex-start;
     }
+    .rightScrollContainer a, h1, p {
+      padding: 0;
+        margin: 0;
+      }
   }
 
+  @media screen and (max-width: 400px) {
+    .rightScrollContainer a, h1, p {
+      text-align: center;
+      }
+
+      .rightScrollContainer {
+        display: flex;
+        justify-content: center;
+      }
+  }
