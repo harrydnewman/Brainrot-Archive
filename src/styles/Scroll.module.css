@@ -43,11 +43,11 @@
 }
 
 .mobileLeftScrollContainer {
-  height: 55vh;
+  height: 70vh;
 }
 
 .mobileRightScrollContainer {
-  height: 41vh;
+  height: 30vh;
 }
 
 .mobileSourceScrollContainer {
@@ -63,26 +63,29 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .leftFlex {
     width: 55%;
   }
   .rightFlex {
     width: 45%;
   }
+  .mobileLeftScrollContainer {
+    height: 60vh;
+  }
+
+  .mobileRightScrollContainer {
+    height: 30vh;
+  }
 }
 
 @media screen and (max-width: 350px) {
   .mobileLeftScrollContainer {
-    height: 40vh;
+    height: 55vh;
   }
 
   .mobileRightScrollContainer {
-    height: 56vh;
-  }
-
-  .mobileSourceScrollContainer {
-    height: 4vh;
+    height: 30vh;
   }
 }
 

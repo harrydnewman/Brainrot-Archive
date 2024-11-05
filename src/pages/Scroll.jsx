@@ -51,9 +51,9 @@ const Scroll = ({scrollYProgress, videoData, onVideoEnd}) => {
                 <div className={styles.mobileRightScrollContainer}>
                     <RightScroll videoData={videoData} />
                 </div>
-                <div className={styles.mobileSourceScrollContainer}>
+                {/* <div className={styles.mobileSourceScrollContainer}>
                     <ScrollSource videoData={videoData} screenHeight={screenHeight} screenWidth={screenWidth} />
-                </div>
+                </div> */}
             </div>
         );
     } else {

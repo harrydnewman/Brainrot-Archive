@@ -41,11 +41,13 @@
 .titleText {
     font-size: 60px;
     padding-top: 40vh;
+    pointer-events: none !important;
 }
 
 .upArrowIcon {
     font-size: 60px;
     padding-bottom: 0;
+    pointer-events: none;
 }
 
 .scrollUpText {
@@ -53,6 +55,7 @@
     margin: 0;
     font-size: 60px;
     text-align: center;
+    pointer-events: none;
 }
 
 .homePageGifs {

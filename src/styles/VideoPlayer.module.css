@@ -4,8 +4,9 @@
     /* background-color: blanchedalmond; */
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-end;
+    margin-top: 15%;
 }
 .outerSquare {
     position: relative;
@@ -39,9 +40,16 @@
     width: 100%;
   }
 
-  @media screen and (min-width: 350px) {
+  @media screen and (max-width: 450px) {
     .playerDiv {
-        justify-content: flex-end;
+        justify-content: center;
+        align-items: center;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    .playerDiv {
+      justify-content: flex-end;
     }
   }
   
