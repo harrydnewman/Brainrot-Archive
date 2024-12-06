@@ -9,7 +9,7 @@ export default function Grid() {
         try {
             const response = await fetch("https://harrydnewman.com/brainrot-upload-server/api/grid");
             let videoData = await response.json();
-            // console.log("Fetched video data:", videoData)
+            console.log("Fetched video data:", videoData)
             setVideoData(videoData)
             setDataLength(videoData.length)
         } catch (error) {

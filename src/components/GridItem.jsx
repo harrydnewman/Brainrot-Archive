@@ -28,13 +28,15 @@ export default function GridItem({ videoDataObject }) {
 
     // set up these damn objects
     useEffect(() => {
-        console.log("Hey Mamas!")
-        // console.log(videoDataObject.title)
+        // console.log("Hey Mamas!")
+        console.log("I have updated!!")
+        console.log("hello world!")
         if(videoDataObject.title){
             setTitle(videoDataObject.title)
         }
         if(videoDataObject.description) {
             setDescription(videoDataObject.description)
+        }
 
             if(videoDataObject.descriptionSource){
                 setDescriptionSource(videoDataObject.descriptionSource)
@@ -53,7 +55,7 @@ export default function GridItem({ videoDataObject }) {
             else {
                 setDescriptionObject(<p>{description}</p>)
             }
-        }
+        
 
         if(videoDataObject.videoSource){
             setVideoSource(videoDataObject.videoSource);
