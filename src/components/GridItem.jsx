@@ -28,49 +28,46 @@ export default function GridItem({ videoDataObject }) {
 
     // set up these damn objects
     useEffect(() => {
-        // console.log("Hey Mamas!")
-        console.log("I have updated!!")
-        console.log("hello world!")
-        if(videoDataObject.title){
-            setTitle(videoDataObject.title)
+        if (videoDataObject.title) {
+            setTitle(videoDataObject.title);
         }
-        if(videoDataObject.description) {
-            setDescription(videoDataObject.description)
+        if (videoDataObject.description) {
+            setDescription(videoDataObject.description);
         }
-
-            if(videoDataObject.descriptionSource){
-                setDescriptionSource(videoDataObject.descriptionSource)
-
-
-                if(videoDataObject.descriptionSourceLink){
-                    setDescriptionSourceLink(videoDataObject.descriptionSourceLink)
-
-                    setDescriptionObject(<p>{description} (<a href={descriptionSourceLink}>{descriptionSource}</a>)</p>)
-                   
-                }
-                else {
-                    setDescriptionObject(<p>{description} ({descriptionSource})</p>)
-                }
+        if (videoDataObject.descriptionSource) {
+            setDescriptionSource(videoDataObject.descriptionSource);
+            if (videoDataObject.descriptionSourceLink) {
+                setDescriptionSourceLink(videoDataObject.descriptionSourceLink);
+                setDescriptionObject(
+                    <p>{videoDataObject.description} (<a href={videoDataObject.descriptionSourceLink}>{videoDataObject.descriptionSource}</a>)</p>
+                );
+            } else {
+                setDescriptionObject(
+                    <p>{videoDataObject.description} ({videoDataObject.descriptionSource})</p>
+                );
             }
-            else {
-                setDescriptionObject(<p>{description}</p>)
-            }
-        
-
-        if(videoDataObject.videoSource){
+        } else {
+            setDescriptionObject(<p>{videoDataObject.description}</p>);
+        }
+    
+        if (videoDataObject.videoSource) {
             setVideoSource(videoDataObject.videoSource);
-            if(videoDataObject.tiktokUsername){
-                setUsername(videoDataObject.tiktokUsername)
-                if(videoDataObject.videoLink){
+            if (videoDataObject.tiktokUsername) {
+                setUsername(videoDataObject.tiktokUsername);
+                if (videoDataObject.videoLink) {
                     setVideoSourceLink(videoDataObject.videoLink);
-                    setSourceObject(<p>Posted by <a href={videoSourceLink}>{username}</a> on {videoSource}</p>)
-                }
-                else {
-                    setSourceObject(<p>Posted by {username} on {videoSource}</p>)
+                    setSourceObject(
+                        <p>Posted by <a href={videoDataObject.videoLink}>{videoDataObject.tiktokUsername}</a> on {videoDataObject.videoSource}</p>
+                    );
+                } else {
+                    setSourceObject(
+                        <p>Posted by {videoDataObject.tiktokUsername} on {videoDataObject.videoSource}</p>
+                    );
                 }
             }
         }
     }, [videoDataObject]);
+    
 
     useEffect(() => {
         if (isHovered && gridItemRef.current) {
