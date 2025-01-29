@@ -1,21 +1,17 @@
-# Use Node.js as the base image
 FROM node:18-alpine
 
-# Set the working directory in the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json files to the container
-COPY package*.json ./
+COPY package.json .
 
-# Install only production dependencies
-RUN npm install --production
+RUN npm install
 
-# Copy the Vite build output (dist folder) and server file to the container
-COPY dist/ dist/
-COPY server.js .
+RUN npm i -g serve
 
-# Expose port 3300 for the server
-EXPOSE 3300
+COPY . .
 
-# Start the Express server
-CMD ["npm", "start"]
+RUN npm run build
+
+EXPOSE 5000
+
+CMD [ "serve", "-s", "dist", "-l", "5000" ]

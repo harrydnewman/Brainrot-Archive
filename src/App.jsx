@@ -8,7 +8,7 @@ import About from './pages/About'; // Adjust path if needed
 function App() {
   return (
     <div className="App">
-      <Router basename="/brainrot">
+      <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/controller" element={<Controller />} />
