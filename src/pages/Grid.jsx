@@ -7,7 +7,7 @@ export default function Grid() {
     const [dataLength, setDataLength] = useState(0);
     const fetchVideos = async () => {
         try {
-            const response = await fetch("https://harrydnewman.com/brainrot-upload-server/api/grid");
+            const response = await fetch("https://api.brainrot.harrydnewman.com/api/grid");
             let videoData = await response.json();
             console.log("Fetched video data:", videoData)
             setVideoData(videoData)

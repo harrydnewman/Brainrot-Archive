@@ -6,7 +6,7 @@ const InnerSquareAnimation = React.forwardRef((props, ref) => {
   let { scrollYProgress, color, image } = props;
 
 
-  const imageUrl = "https://harrydnewman.com" + image;
+  const imageUrl = "https://api.brainrot.harrydnewman.com" + image;
 
 
 

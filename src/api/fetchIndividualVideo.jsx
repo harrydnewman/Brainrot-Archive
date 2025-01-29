@@ -1,7 +1,7 @@
 
 export default async function fetchIndividualVideo(){
     try {
-        const response = await fetch("https://harrydnewman.com/brainrot-upload-server/api/");
+        const response = await fetch("https://api.brainrot.harrydnewman.com/api/");
         const responseData = await response.json();
         console.log("ResponseData:", responseData);
         return responseData;
