@@ -40,7 +40,7 @@ export default function Home() {
   const fetchGifs = async () => {
     try {
       // const response = await fetch("https://harrydnewman.com/brainrot-upload-server/api/gifs");
-      const response = await fetch("https://api.brainrot.harrydnewman.com/api/gifs")
+      const response = await fetch("https://api.brainrot.harrydnewman.com/api/homevideos")
       const gifUrls = await response.json();
       console.log("gifUrls:", gifUrls);
       setImages(gifUrls); // Set the fetched GIF URLs to state
